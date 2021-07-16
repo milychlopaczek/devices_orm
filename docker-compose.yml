@@ -1,0 +1,19 @@
+version: '3'
+services:  
+  devices:
+    image: deviceslist:latest
+    ports:
+    - 8000:8000
+    volumes:
+    - C:/Users/jakub.kuziola/Desktop/symfony_TEST/devices-list/devices-2:/var/www/html
+  devicesdb:
+    image: mysql:8
+    ports:
+      - 3306:3306
+    volumes:
+      - C:/Users/jakub.kuziola/Desktop/symfony_TEST/devices/devicesdb:/var/lib/mysql
+    environment: 
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: devicesdb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: ekliwhgcgbfiwhfruehvbfw
