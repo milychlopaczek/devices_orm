@@ -1,0 +1,22 @@
+version: '3'
+services:  
+  devices:
+    image: pensiero:latest
+    ports:
+    - 8000:80
+    volumes:
+    - ./:/var/www
+    depends_on:
+      - devicesdb
+  devicesdb:
+    image: mysql:8
+    container_name: symfony_mysql
+    ports:
+      - 3306:3306
+    volumes:
+      - C:/Users/jakub.kuziola/Desktop/symfony_TEST/devices/devicesdb:/var/lib/mysql
+    environment: 
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: devicesdb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: ekliwhgcgbfiwhfruehvbfw
